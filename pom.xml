@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.fiap</groupId>
 	<artifactId>checkpoint1</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>checkpoint1</name>
 	<description>Primeiro checkpoint de microserviços de 2023</description>
 	<properties>
