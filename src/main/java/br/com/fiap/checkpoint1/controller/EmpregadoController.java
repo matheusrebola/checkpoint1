@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import br.com.fiap.checkpoint1.controller.dto.EmpregadoCreate;
 import br.com.fiap.checkpoint1.model.Empregado;
 import br.com.fiap.checkpoint1.service.EmpregadoService;
 
@@ -22,8 +24,12 @@ public class EmpregadoController {
 		return empregadoService.list();
 	}
 	@PostMapping
-	public Empregado create(Empregado empregado){
-		Empregado result = empregadoService.save(empregado);
+	public Empregado create(EmpregadoCreate dto){
+		Empregado empregadoInsert = new Empregado();
+		empregadoInsert.setEndereco(dto.getEndereco());
+		empregadoInsert.setNome(dto.getNome());
+		
+		Empregado result = empregadoService.save(empregadoInsert);
 		return result;
 	}
 	@PutMapping
